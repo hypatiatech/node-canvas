@@ -31,7 +31,7 @@
     "test-server": "node test/server.js",
     "generate-wpt": "node ./test/wpt/generate.js",
     "test-wpt": "mocha test/wpt/generated/*.js",
-    "install": "node-pre-gyp install --fallback-to-build --update-binary",
+    "install": "if [ -x $CANVAS_DISABLE_AUTOBUILD ]; then node-pre-gyp install --fallback-to-build --update-binary; fi",
     "dtslint": "dtslint types"
   },
   "binary": {
